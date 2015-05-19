@@ -1,0 +1,12 @@
+Polyline2Nby2 = function(polyline){
+  
+  x = polyline
+  x1 = gsub(pattern=']',replacement="",x=x)
+  x2 = gsub(pattern="[",replacement="",x=x1,fixed=T)
+  x3 = strsplit(x=x2,split=',')
+  x4 = as.numeric(x3[[1]])
+  n = length(x4)
+  x5 = matrix(data=x4,ncol=n/2)
+  x6 = t(x5)
+  return(x6)
+}
